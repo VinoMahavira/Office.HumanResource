@@ -1,0 +1,5 @@
+# Ignore built files
+/Office.HumanResource.Application/bin
+/Office.HumanResource.Domain/bin
+/Office.HumanResource.Infrastructure/bin
+/Office.HumanResource.WebApi/bin
