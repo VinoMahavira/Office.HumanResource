@@ -3,24 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Office.HumanResource.WebApi.Models;
+using Office.HumanResource.Core.Entities;
+using Office.HumanResource.Core.Interfaces;
 
 namespace Office.HumanResource.WebApi.Controllers
 {
     [Route("api/[controller]")]
-    public class EmployeesController : ControllerBase
+    public class EmployeesController : Controller
     {
-        private readonly HumanResourceContext _context;
+        private readonly IRepository<Employee> _employeeRepository;
 
-        public EmployeesController(HumanResourceContext context)
+        public EmployeesController(IRepository<Employee> employeeRepository)
         {
-            _context = context;            
+            _employeeRepository = employeeRepository;            
         }
 
         [HttpGet]
-        public List<Employee> GetAll()
+        public IActionResult List()
         {
-            return _context.Employees.ToList();
+            var items = _employeeRepository.List();
+            return Ok(items);
         }
     }
 }

@@ -1,5 +1,14 @@
 # editor
-/.vscode
+.vscode/
 
 # built
-/src/Office.HumanResource.WebApi/bin
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
